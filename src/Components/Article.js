@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import * as actions from "../Actions";
 var HtmlToReactParser = require("html-to-react").Parser;
 const Article = ({ mainPost, selectBlogpost, match: { params } }) => {
-  console.log(params.id);
+  console.log(params);
   useEffect(() => {
     mainPost(params.id);
   }, []);
@@ -19,7 +19,7 @@ const Article = ({ mainPost, selectBlogpost, match: { params } }) => {
       <div className="article-begin">
         <div className="article-title mt-5 offset-2">
           <h1>{selectBlogpost.data.title}</h1>
-          <p className="mt-3 border-bottom article-author">
+          <p className="mt-3 border-bottom col-8 article-author">
             {selectBlogpost.data.author}
           </p>
           <p className=" article-date">{selectBlogpost.data.dateAdded}</p>
@@ -30,7 +30,7 @@ const Article = ({ mainPost, selectBlogpost, match: { params } }) => {
             <h2 className="text-muted">Article Description </h2>
           </div>
           <div
-            className=" offset-2 bg-info col-8 mb-3 article-body mt-3"
+            className=" offset-2 col-8 mb-3 article-body mt-3"
             id="render-body"
           >
             {reactElement}

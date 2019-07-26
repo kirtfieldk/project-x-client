@@ -37,18 +37,18 @@ const App = props => {
         <Route path="/about" component={About} />
         <Route path="/article/:id" component={Article} />
         <Route path="/admin" exact component={Login} />
+
         <>
-        <div className="row">
-          <AdminScreen />
-          <Route path="/admin/blogpost" component={AdminBlogpost} />
-          <Route path="/admin/podcast" component={AdminPodcast} />
-          <Route path="/admin/newsletter" component={AdminNewsletter} />
-          <Route path="/admin/images" component={AdminImages} />
-          <Route path="/Admin/outsource" component={AdminOutsource} />
-        </div>
+          <div className="row">
+            <AdminScreen />
+            <Route path="/admin/blogpost" component={AdminBlogpost} />
+            <Route path="/admin/podcast" component={AdminPodcast} />
+            <Route path="/admin/newsletter" component={AdminNewsletter} />
+            <Route path="/admin/images" component={AdminImages} />
+            <Route path="/Admin/outsource" component={AdminOutsource} />
+          </div>
         </>
       </Switch>
-      {/* <Footer /> */}
     </Router>
   );
 };

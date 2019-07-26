@@ -16,10 +16,12 @@ const RenderLinkReads = ({ listLinkRead, deleteProp, fetchOutsource }) => {
     showPopUp(false);
   };
   const renderList = () => {
+    let i = 0;
     if (listLinkRead.length === 0) {
       return <div className="border-bottom">Loading</div>;
     } else {
       return listLinkRead.map(doc => {
+        i++;
         if (deleteProp) {
           return (
             <div className="border-bottom hover-change ml-3 mt-3" key={doc.id}>
@@ -45,14 +47,20 @@ const RenderLinkReads = ({ listLinkRead, deleteProp, fetchOutsource }) => {
             </div>
           );
         }
+        console.log(i);
         return (
-          <div className="border-bottom hover-change mt-3" key={doc.id}>
-            <a href={doc.values.link} target="_target">
+          <div
+            className={
+              i % 2 === 0
+                ? " hover-grey bg-secondary height-25 text-white col-sm-4 mt-3"
+                : " hover-grey  col-sm-4 mt-3 height-25"
+            }
+            key={doc.id}
+          >
+            <a href={doc.values.link} target="_target" className="hover-change">
               <h5>{doc.values.title}</h5>
             </a>
-            <p className="font-weight-lighter light mt-neg-5">
-              {doc.values.desc}
-            </p>
+            <p className=" mt-neg-5">{doc.values.desc}</p>
           </div>
         );
       });
@@ -66,13 +74,18 @@ const RenderLinkReads = ({ listLinkRead, deleteProp, fetchOutsource }) => {
     }
   };
 
+  const renderCubes = () => {
+    if (deleteProp)
+      return (
+        <div>
+          {renderList()}
+          <span className="ml-5 float-right">{showModel()}</span>
+        </div>
+      );
+    return <div className="row">{renderList()}</div>;
+  };
   // FINAL RETURN
-  return (
-    <div>
-      {renderList()}
-      <span className="ml-5 float-right">{showModel()}</span>
-    </div>
-  );
+  return <div>{renderCubes()}</div>;
 };
 
 const mapStateToProps = ({ listLinkRead }) => {

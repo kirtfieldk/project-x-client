@@ -2,10 +2,11 @@
   text-align: center;
 }
 body {
-  font-family: "Josefin Sans", sans-serif;
+  /* font-family: "Josefin Sans", sans-serif; */
   overflow-x: hidden;
+  font-family: "Roboto Condensed", sans-serif;
   /* background-image: linear-gradient(to right, #434343 0%, black 100%); */
-  background-image: linear-gradient(to right, #868f96 0%, #596164 100%);
+  /* background-image: linear-gradient(to right, #868f96 0%, #596164 100%); */
 }
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -28,13 +29,8 @@ body {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.text-small {
+  font-size: 0.8rem;
 }
 .white {
   color: white;
@@ -77,4 +73,15 @@ a {
 .border-rightless {
   border-right-style: none;
   border-radius: 0;
+}
+a:hover {
+  text-decoration: none;
+}
+.hover-grey:hover {
+  -webkit-box-shadow: 33px 20px 71px -8px rgba(166, 159, 166, 1);
+  -moz-box-shadow: 33px 20px 71px -8px rgba(166, 159, 166, 1);
+  box-shadow: 33px 20px 71px -8px rgba(166, 159, 166, 1);
+}
+.height-25 {
+  height: 45vh;
 }

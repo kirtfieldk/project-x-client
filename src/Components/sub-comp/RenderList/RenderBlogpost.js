@@ -4,7 +4,6 @@ import * as actions from "../../../Actions";
 import Axios from "axios";
 import { Link } from "react-router-dom";
 function RenderBlogpost({ blogpostList, deleteBlogPost, fetchBlogpost }) {
-  console.log(blogpostList);
   const deletePost = async id => {
     await Axios.delete(`/blogpost/delete/${id}`);
     fetchBlogpost();

@@ -10,7 +10,7 @@ h5:hover {
   text-decoration: underline;
 }
 /* ARticle */
-.article-img{
+.article-img {
   width: 100vw;
   height: 35vh;
   background-color: black;
@@ -19,7 +19,7 @@ h5:hover {
   position: absolute;
   margin: auto;
   top: 0;
-  background-color: rgba(255,255,255, .7);
+  background-color: rgba(255, 255, 255, 0.7);
   z-index: 1;
   height: 100vh;
   width: 100vw;
@@ -41,3 +41,6 @@ h5:hover {
   border-style: solid;
   border-radius: 50px;
 } */
+.article-body {
+  line-height: 2rem;
+}

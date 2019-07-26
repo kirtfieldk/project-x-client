@@ -1,5 +1,5 @@
 .body-box {
-  margin-top: -50px;
+  margin-top: -55px;
   background-color: rgba(0, 0, 0, 0.7);
   /* background-color: black; */
   border-radius: 25px;
@@ -24,4 +24,7 @@
   color: white;
   font-family: "DM Serif Display", serif;
   font-size: 3rem;
+}
+.img-list{
+  height: 60vh;
 }

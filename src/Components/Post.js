@@ -13,7 +13,8 @@ function Post() {
         <div className="col-5   ml-3">
           <div>
             {/* Linked outSource */}
-            <LinkOutsource />
+            <h2 className="ml-3">Readt dis</h2>
+            <RenderBlogpost deleteBlogPost={false} />
           </div>
         </div>
         {/* Linked Podcast */}
@@ -22,8 +23,11 @@ function Post() {
         </div>
       </div>
       {/* End Of Row */}
-      <div className="row col-12">
-        <RenderBlogpost deleteBlogPost={false} />
+      {/* Row Two */}
+      {/* Linked outSource */}
+      <h2 className="col-12 text-center">Read the Ideas We Care About</h2>
+      <div className="ml-3 mr-3 pb-5">
+        <LinkOutsource deleteOutsource={false} />
       </div>
     </>
   );

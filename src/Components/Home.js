@@ -6,7 +6,7 @@ function Home() {
     <div>
       <HomePageHero />
       <div className="row">
-        <div className="col-7 body-box shadow text-light ml-5">
+        <div className="col-7 body-box shadow text-light ml-5 h-50">
           <div className="title col-12 border-bottom">Project-x</div>
           <div className="body mt-3 ml-3">
             <div className="row">
@@ -19,9 +19,10 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className="col-3 offset-1 mt-3 border-bottom border-top">
+        <div className="col-4 mt-3 border-bottom">
           <FavPodcast />
         </div>
+        <div className="img-list mt-5 mb-5 bg-dark col-12">Kk</div>
       </div>
     </div>
   );
