@@ -46,7 +46,7 @@ const FavPodcast = () => {
   };
   return (
     <div className="border">
-      <h3 className="pb-4">Our Favorite Podcasts</h3>
+      <h3 className="pb-4 text-center">Our Favorite Podcasts</h3>
       {renderList()}
     </div>
   );

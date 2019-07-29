@@ -25,6 +25,40 @@
   font-family: "DM Serif Display", serif;
   font-size: 3rem;
 }
-.img-list{
-  height: 60vh;
+
+.ice-mt {
+  background-image: url("../Images/snow-mt.jpg");
+  grid-row: 1/-1;
+  grid-column: 1/4;
+  background-position: center;
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+.rockwater {
+  grid-row: 1/2;
+  grid-column: 4/6;
+  background-image: url("../Images/rocky-water.jpg");
+  background-position: center;
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+.waterfall {
+  grid-row: 1/-1;
+  grid-column: 6/11;
+  background-image: url("../Images/waterfall.jpg");
+  background-position: center;
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+.snow-rock {
+  background-image: url("../Images/snow-cock.jpg");
+  grid-row: 2/3;
+}
+.green {
+  background-image: url("../Images/water-mt.jpg");
+  grid-row: 1/-1;
+  grid-column: 11/13;
+  background-position: center;
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
 }

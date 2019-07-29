@@ -25,7 +25,7 @@ function Post() {
       {/* End Of Row */}
       {/* Row Two */}
       {/* Linked outSource */}
-      <h2 className="col-12 text-center">Read the Ideas We Care About</h2>
+      <h2 className="col-12 pb-5 text-center">Read the Ideas We Care About</h2>
       <div className="ml-3 mr-3 pb-5">
         <LinkOutsource deleteOutsource={false} />
       </div>

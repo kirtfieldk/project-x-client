@@ -3,13 +3,18 @@ import { connect } from "react-redux";
 import * as actions from "../Actions";
 var HtmlToReactParser = require("html-to-react").Parser;
 const Article = ({ mainPost, selectBlogpost, match: { params } }) => {
-  console.log(params);
   useEffect(() => {
     mainPost(params.id);
   }, []);
-  console.log(selectBlogpost);
 
   if (selectBlogpost !== null) {
+    const imageStyle = {
+      backgroundImage: "url(" + selectBlogpost.data.blogImg + ")",
+      height: "63vh",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover"
+    };
     // STUFF NEEDED TO RENDER HTML TAGS INTO REACT
     const htmlInput = selectBlogpost.data.body;
     var htmlToReactParser = new HtmlToReactParser();
@@ -24,10 +29,10 @@ const Article = ({ mainPost, selectBlogpost, match: { params } }) => {
           </p>
           <p className=" article-date">{selectBlogpost.data.dateAdded}</p>
         </div>
-        <div className="article-img" />
+        <div style={imageStyle} className="article-img" />
         <div className="col-12 border-bottom">
           <div className="offset-3  mt-5 article-desc">
-            <h2 className="text-muted">Article Description </h2>
+            <h2 className="text-muted">{selectBlogpost.data.desc} </h2>
           </div>
           <div
             className=" offset-2 col-8 mb-3 article-body mt-3"

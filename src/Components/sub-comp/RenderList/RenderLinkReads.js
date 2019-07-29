@@ -52,13 +52,17 @@ const RenderLinkReads = ({ listLinkRead, deleteProp, fetchOutsource }) => {
           <div
             className={
               i % 2 === 0
-                ? " hover-grey bg-secondary height-25 text-white col-sm-4 mt-3"
-                : " hover-grey  col-sm-4 mt-3 height-25"
+                ? " hover-grey bg-secondary height-25 text-white col-sm-4 "
+                : " hover-grey  col-sm-4 height-25"
             }
             key={doc.id}
           >
-            <a href={doc.values.link} target="_target" className="hover-change">
-              <h5>{doc.values.title}</h5>
+            <a
+              href={doc.values.link}
+              target="_target"
+              className="hover-change pb-3"
+            >
+              <h5 className = "pb-3">{doc.values.title}</h5>
             </a>
             <p className=" mt-neg-5">{doc.values.desc}</p>
           </div>

@@ -80,8 +80,31 @@ a:hover {
 .hover-grey:hover {
   -webkit-box-shadow: 33px 20px 71px -8px rgba(166, 159, 166, 1);
   -moz-box-shadow: 33px 20px 71px -8px rgba(166, 159, 166, 1);
-  box-shadow: 33px 20px 71px -8px rgba(166, 159, 166, 1);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 .height-25 {
   height: 45vh;
+}
+.grid {
+  display: grid;
+  width: 97vw;
+  height: 60vh;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+  background-color: white;
+  grid-gap: 5px;
+  margin-right: 20px;
+}
+.not-found {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.trans-body {
+  position: relative;
+  top: 30%;
+  background: rgba(56, 255, 255, 0.06);
 }

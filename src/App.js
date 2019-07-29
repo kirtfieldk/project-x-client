@@ -12,6 +12,7 @@ import Post from "./Components/Post";
 import Nav from "./Components/Nav";
 import Footer from "./Components/Footer";
 import Login from "./Components/Login/loginIn";
+import NotFound from "./Components/NotFound";
 // Admin Screen
 import AdminScreen from "./Components/Login/AdminScreen";
 import AdminNewsletter from "./Components/Login/AdminPages/AdminNewsletter";
@@ -37,7 +38,6 @@ const App = props => {
         <Route path="/about" component={About} />
         <Route path="/article/:id" component={Article} />
         <Route path="/admin" exact component={Login} />
-
         <>
           <div className="row">
             <AdminScreen />
@@ -48,6 +48,7 @@ const App = props => {
             <Route path="/Admin/outsource" component={AdminOutsource} />
           </div>
         </>
+        <Route path="*" component={NotFound} />
       </Switch>
     </Router>
   );

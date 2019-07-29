@@ -1,6 +1,7 @@
 import React from "react";
 import HomePageHero from "./sub-comp/HomepageHero";
 import FavPodcast from "./sub-comp/FavPodcast";
+import ImgBlock from "../Components/sub-comp/img-block";
 function Home() {
   return (
     <div>
@@ -22,7 +23,9 @@ function Home() {
         <div className="col-4 mt-3 border-bottom">
           <FavPodcast />
         </div>
-        <div className="img-list mt-5 mb-5 bg-dark col-12">Kk</div>
+        <div className=" mt-5 mb-5  col-12">
+          <ImgBlock />
+        </div>
       </div>
     </div>
   );
