@@ -1,18 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import * as actions from "../../../Actions";
 import Axios from "axios";
 
 const RenderPodcast = ({ podcastList, deletePod, fetchPodcast }) => {
+  const [post, setPost] = useState(false);
   const deletePost = async id => {
+    setPost(id);
     await Axios.delete(`/podcast/delete/${id}`);
     fetchPodcast();
+    setPost(false);
   };
   console.log(podcastList);
   const renderPodList = () => {
     return podcastList.map(doc => {
       return (
-        <div className="border-bottom hover-change" key={doc.id}>
+        <div
+          className={
+            post === doc.id
+              ? "border-bottom text-danger hover-change"
+              : "border-bottom  hover-change"
+          }
+          key={doc.id}
+        >
           {deletePod ? (
             <button
               onClick={() => {

@@ -4,13 +4,13 @@ import RenderPodcast from "./sub-comp/RenderList/RenderPodcast";
 import RenderBlogpost from "./sub-comp/RenderList/RenderBlogpost";
 function Post() {
   return (
-    <>
+    <> 
       <div className="col-8 mt-3 offset-2 border-bottom border-top post-bio mb-5">
         We deliver content every Monday and Thursday through our social media
       </div>
       {/* One Row */}
       <div className=" bg-light  row">
-        <div className="col-5   ml-3">
+        <div className="col-sm-5   ml-3">
           <div>
             {/* Linked outSource */}
             <h2 className="ml-3">Readt dis</h2>
@@ -18,7 +18,7 @@ function Post() {
           </div>
         </div>
         {/* Linked Podcast */}
-        <div className="col-2 mt-3 offset-4">
+        <div className="ml-3 col-sm-2 mt-3 ">
           <RenderPodcast />
         </div>
       </div>

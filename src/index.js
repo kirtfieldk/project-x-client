@@ -18,8 +18,8 @@ import "./Style/about.css";
 import reducers from "./Reducers";
 
 axios.defaults.baseURL =
-  "https://us-central1-project-x-ba483.cloudfunctions.net/api";
-// " http://localhost:5001/project-x-ba483/us-central1/api";
+  // "https://us-central1-project-x-ba483.cloudfunctions.net/api";
+" http://localhost:5001/project-x-ba483/us-central1/api";
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 ReactDOM.render(
   <Provider store={store}>

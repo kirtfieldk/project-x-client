@@ -13,6 +13,8 @@ import Nav from "./Components/Nav";
 import Footer from "./Components/Footer";
 import Login from "./Components/Login/loginIn";
 import NotFound from "./Components/NotFound";
+// AUTH
+import ProtectRoute from "./ProtectRoute";
 // Admin Screen
 import AdminScreen from "./Components/Login/AdminScreen";
 import AdminNewsletter from "./Components/Login/AdminPages/AdminNewsletter";
@@ -41,11 +43,14 @@ const App = props => {
         <>
           <div className="row">
             <AdminScreen />
-            <Route path="/admin/blogpost" component={AdminBlogpost} />
-            <Route path="/admin/podcast" component={AdminPodcast} />
-            <Route path="/admin/newsletter" component={AdminNewsletter} />
-            <Route path="/admin/images" component={AdminImages} />
-            <Route path="/Admin/outsource" component={AdminOutsource} />
+            <ProtectRoute path="/admin/blogpost" component={AdminBlogpost} />
+            <ProtectRoute path="/admin/podcast" component={AdminPodcast} />
+            <ProtectRoute
+              path="/admin/newsletter"
+              component={AdminNewsletter}
+            />
+            <ProtectRoute path="/admin/images" component={AdminImages} />
+            <ProtectRoute path="/Admin/outsource" component={AdminOutsource} />
           </div>
         </>
         <Route path="*" component={NotFound} />

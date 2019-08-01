@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
 import * as actions from "../../../Actions";
 
 const RenderNewsletter = ({ deleteNewsletter, newsletter, getNewsletter }) => {
+  const [post, setPost] = useState(false);
+
   const deletePost = async value => {
+    setPost(value);
     await axios.delete(`/newsletter/${value}`);
     getNewsletter();
+    setPost(false);
   };
   const renderList = () => {
     if (newsletter === null) {
@@ -15,7 +19,14 @@ const RenderNewsletter = ({ deleteNewsletter, newsletter, getNewsletter }) => {
       return newsletter.map(doc => {
         if (deleteNewsletter) {
           return (
-            <div className="border-bottom hover-change mt-3" key={doc.id}>
+            <div
+              className={
+                post === doc.id
+                  ? "border-bottom text-danger hover-change mt-3"
+                  : "border-bottom  hover-change mt-3"
+              }
+              key={doc.id}
+            >
               <button
                 onClick={() => deletePost(doc.id)}
                 type="button"
@@ -36,11 +47,7 @@ const RenderNewsletter = ({ deleteNewsletter, newsletter, getNewsletter }) => {
       });
     }
   };
-  return (
-    <div className="ml-3">
-      {renderList()}
-    </div>
-  );
+  return <div className="ml-3">{renderList()}</div>;
 };
 
 const mapStateToProps = ({ newsletter }) => {

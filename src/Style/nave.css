@@ -1,6 +1,31 @@
 .link {
-  padding: 5px 0;
-  color: white;
+  background-color: rgba(221, 224, 15, 0.945);
   font-size: 1rem;
   text-align: center;
+}
+.link:hover {
+  background-color: rgba(206, 209, 45, 0.945);
+}
+.magenta {
+  color: #121212;
+}
+.magenta:hover {
+  color: white;
+}
+.shadow {
+  -webkit-box-shadow: 3px 23px 1px -3px rgba(0, 0, 0, 0.21);
+  -moz-box-shadow: 3px 23px 1px -3px rgba(0, 0, 0, 0.21);
+  box-shadow: 3px 10px 1px -3px rgba(0, 0, 0, 0.21);
+}
+.yellow {
+  background-color: rgba(221, 224, 15, 0.945);
+}
+.violet {
+  background-color: rgba(92, 28, 196, 0.822);
+}
+.text-yellow {
+  color: rgba(221, 224, 15, 0.945);
+}
+.text-violet {
+  color: rgba(92, 28, 196, 0.822);
 }

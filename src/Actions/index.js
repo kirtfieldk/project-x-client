@@ -1,23 +1,30 @@
 import axios from "axios";
 // ALL ACTIONS NEEDED
 export const fetchImgs = () => async dispatch => {
+  dispatch({ type: "LOADING", payload: true });
   const response = await axios.get("/fetchimg");
   dispatch({ type: "FETCH_IMG", payload: response.data });
+  dispatch({ type: "LOADING", payload: false });
 };
 // Blogpost types
 export const fetchBlogpost = () => async dispatch => {
+  dispatch({ type: "LOADING", payload: true });
   const response = await axios.get("/blogpost");
   dispatch({ type: "FETCH_BLOGPOST", payload: response.data });
+  dispatch({ type: "LOADING", payload: false });
 };
 
 export const mainPost = value => async dispatch => {
+  dispatch({ type: "LOADING", payload: true });
   const response = await axios.get(`/blogpost/${value}`);
-  console.log(response.data);
   dispatch({ type: "SELECTED_BLOGPOST", payload: response.data });
+  dispatch({ type: "LOADING", payload: false });
 };
 export const addBlogpost = value => async dispatch => {
+  dispatch({ type: "LOADING", payload: true });
   const response = await axios.post("/blogpost", value);
   dispatch({ type: "ADD_BLOGPOST", payload: response.data });
+  dispatch({ type: "LOADING", payload: false });
 };
 
 // Outsource types
@@ -27,8 +34,10 @@ export const fetchOutsource = () => async dispatch => {
 };
 
 export const addOutsource = value => async dispatch => {
+  dispatch({ type: "LOADING", payload: true });
   const response = await axios.post("/outsourcelinks", value);
   dispatch({ type: "ADD_OUTSOURCE", payload: response.data });
+  dispatch({ type: "LOADING", payload: false });
 };
 
 // PodcastLink
@@ -40,9 +49,10 @@ export const fetchPodcast = () => async dispatch => {
 };
 
 export const addPodcast = value => async dispatch => {
+  dispatch({ type: "LOADING", payload: true });
   const response = await axios.post("/podcast", value);
-  console.log(response);
   dispatch({ type: "ADD_PODCAST", payload: response.data });
+  dispatch({ type: "LOADING", payload: false });
 };
 
 export const selectPodcast = value => async dispatch => {
@@ -52,8 +62,9 @@ export const selectPodcast = value => async dispatch => {
 
 // SIGN IN
 export const logIn = value => async dispatch => {
+  dispatch({ type: "LOADING", payload: true });
   const response = await axios.post("/login", value);
-  console.log(response.data.token);
+  dispatch({ type: "LOADING", payload: false });
   const adminToken = `Bearer ${response.data.token}`;
   localStorage.setItem(`adminToken`, adminToken);
   axios.defaults.headers.common[`Autherization`] = adminToken;
@@ -62,10 +73,14 @@ export const logIn = value => async dispatch => {
 };
 // Newsletter
 export const SubmitNewsletter = value => async dispatch => {
+  dispatch({ type: "LOADING", payload: true });
   const response = await axios.post("/newsletter", value);
   dispatch({ type: "SUBMIT_NEWSLETTER", payload: response.data });
+  dispatch({ type: "LOADING", payload: false });
 };
 export const getNewsletter = () => async dispatch => {
+  dispatch({ type: "LOADING", payload: true });
   const response = await axios.get("/newsletter");
   dispatch({ type: "NEWSLETTER", payload: response.data });
+  dispatch({ type: "LOADING", payload: false });
 };

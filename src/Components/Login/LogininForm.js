@@ -16,6 +16,7 @@ const LogininForm = props => {
     };
     props.logIn(userInfo);
   };
+  console.log(props.loading);
 
   const renderForm = () => {
     return (
@@ -44,13 +45,23 @@ const LogininForm = props => {
               placeholder="Password"
               onChange={e => setPassword(e.target.value)}
             />
-            <small className="text-danger mt-3 text-center form-text">
-              {props.loginToken.err}
+            <small
+              className={
+                props.loading
+                  ? "text-info mt-3 text-center form-text"
+                  : "text-danger mt-3 text-center form-text"
+              }
+            >
+              {props.loading ? "Loading" : props.loginToken.err}
             </small>
           </div>
           <button
             type="submit"
-            className="btn btn-outline-success offset-9 mt-2 mb-3 col-3"
+            className={
+              props.loading
+                ? "btn btn-outline-success offset-9 mt-2 mb-3 col-3 disable"
+                : "btn btn-outline-success offset-9 mt-2 mb-3 col-3"
+            }
           >
             Login
           </button>
@@ -60,9 +71,10 @@ const LogininForm = props => {
   };
   return <div>{renderForm()}</div>;
 };
-const mapStateToProps = ({ loginToken }) => {
+const mapStateToProps = ({ loginToken, loading }) => {
   return {
-    loginToken
+    loginToken,
+    loading
   };
 };
 export default connect(

@@ -11,6 +11,7 @@ import listLinkRead from "./listLinkRead";
 import newsletter from "./newsletter";
 import selectedPodcast from "./selectedPodcast";
 import submitNewsletter from "./submitNewsletter";
+import loading from "./loading";
 
 export default combineReducers({
   podcastList,
@@ -23,5 +24,6 @@ export default combineReducers({
   newsletter,
   submitNewsletter,
   selectedPodcast,
+  loading,
   form: formReducer
 });

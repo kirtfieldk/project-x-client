@@ -12,7 +12,13 @@
 .body {
   margin-left: 5px;
 }
+.open-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 10rem;
+}
 .homepage-hero {
+  margin: 0;
+  padding: 0;
   background-image: url("../Images/light-mount.jpg");
   height: 80vh;
   /* background-position: center; Center the image */

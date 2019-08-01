@@ -5,9 +5,12 @@
 .hover-change {
   cursor: pointer;
 }
-h5:hover {
-  color: green;
+h5 {
+}
+h2:hover {
+  font-weight: bolder;
   text-decoration: underline;
+  color: black;
 }
 /* ARticle */
 .article-img {
@@ -24,7 +27,10 @@ h5:hover {
   height: 100vh;
   width: 100vw;
 }
-
+p {
+  line-height: 2rem;
+  font-size: 1.3rem;
+}
 .loading-article {
   position: absolute;
   top: 25vh;

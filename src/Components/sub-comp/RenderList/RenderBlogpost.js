@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import * as actions from "../../../Actions";
 import Axios from "axios";
 import { Link } from "react-router-dom";
 function RenderBlogpost({ blogpostList, deleteBlogPost, fetchBlogpost }) {
+  const [post, setPost] = useState(false);
   const deletePost = async id => {
+    setPost(id);
     await Axios.delete(`/blogpost/delete/${id}`);
     fetchBlogpost();
+    setPost(false);
   };
   const renderList = () => {
     if (blogpostList.length === 0)
@@ -14,9 +17,15 @@ function RenderBlogpost({ blogpostList, deleteBlogPost, fetchBlogpost }) {
 
     return blogpostList.map(doc => {
       if (deleteBlogPost) {
-        console.log(doc.id);
         return (
-          <div className="border-bottom hover-change ml-3 mt-3" key={doc.id}>
+          <div
+            className={
+              post === doc.id
+                ? "border-bottom hover-change text-danger ml-3 mt-3"
+                : "border-bottom hover-change ml-3 mt-3"
+            }
+            key={doc.id}
+          >
             <button
               onClick={() => {
                 deletePost(doc.id);

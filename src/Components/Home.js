@@ -5,9 +5,10 @@ import ImgBlock from "../Components/sub-comp/img-block";
 function Home() {
   return (
     <div>
+      <div className="text-center open-title pt-5 pb-5">EARTHSIS</div>
       <HomePageHero />
       <div className="row">
-        <div className="col-7 body-box shadow text-light ml-5 h-50">
+        <div className="col-sm-7 ml-5 body-box shadow text-light h-50">
           <div className="title col-12 border-bottom">Project-x</div>
           <div className="body mt-3 ml-3">
             <div className="row">

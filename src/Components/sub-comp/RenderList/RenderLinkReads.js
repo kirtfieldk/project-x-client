@@ -9,9 +9,13 @@ const RenderLinkReads = ({ listLinkRead, deleteProp, fetchOutsource }) => {
   const [desc, setDesc] = useState("");
   const [id, setId] = useState("");
   const [popUp, showPopUp] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [post, setPost] = useState(false);
 
   const deleteBlogPost = async () => {
+    setPost(id);
     await axios.delete(`/outsourcelinks/${id}`);
+    setPost(false);
     fetchOutsource();
     showPopUp(false);
   };
@@ -24,7 +28,14 @@ const RenderLinkReads = ({ listLinkRead, deleteProp, fetchOutsource }) => {
         i++;
         if (deleteProp) {
           return (
-            <div className="border-bottom hover-change ml-3 mt-3" key={doc.id}>
+            <div
+              className={
+                post === doc.id
+                  ? "border-bottom hover-change text-danger ml-3 mt-3"
+                  : "border-bottom hover-change  ml-3 mt-3"
+              }
+              key={doc.id}
+            >
               <button
                 onClick={() => {
                   setTitle(doc.values.title);
@@ -47,13 +58,12 @@ const RenderLinkReads = ({ listLinkRead, deleteProp, fetchOutsource }) => {
             </div>
           );
         }
-        console.log(i);
         return (
           <div
             className={
               i % 2 === 0
-                ? " hover-grey bg-secondary height-25 text-white col-sm-4 "
-                : " hover-grey  col-sm-4 height-25"
+                ? " hover-grey yellow text-violet  pt-3 col-sm-4 "
+                : " hover-grey   col-sm-4 pt-3"
             }
             key={doc.id}
           >
@@ -62,7 +72,7 @@ const RenderLinkReads = ({ listLinkRead, deleteProp, fetchOutsource }) => {
               target="_target"
               className="hover-change pb-3"
             >
-              <h5 className = "pb-3">{doc.values.title}</h5>
+              <h2 className="pb-3">{doc.values.title}</h2>
             </a>
             <p className=" mt-neg-5">{doc.values.desc}</p>
           </div>
