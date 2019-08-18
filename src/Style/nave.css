@@ -1,21 +1,45 @@
-.link {
-  background-color: rgba(221, 224, 15, 0.945);
+.nav-yellow {
+  animation: turn-yellow 0.5s ease-in forwards;
+}
+@keyframes turn-yellow {
+  from {
+    background-color: white;
+    font-size: 1rem;
+    text-align: center;
+  }
+  to {
+    background-color: rgba(221, 224, 15, 0.945);
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+.nav-yellow:hover {
+  background-color: rgba(206, 209, 45, 0.945);
+}
+.nav-white {
+  background-color: rgba(255, 255, 255, 0);
   font-size: 1rem;
   text-align: center;
 }
-.link:hover {
-  background-color: rgba(206, 209, 45, 0.945);
+.nav-white:hover {
+  color: black;
 }
 .magenta {
   color: #121212;
 }
 .magenta:hover {
-  color: white;
+  color: #444444;
+  text-decoration: underline #444444;
 }
 .shadow {
   -webkit-box-shadow: 3px 23px 1px -3px rgba(0, 0, 0, 0.21);
   -moz-box-shadow: 3px 23px 1px -3px rgba(0, 0, 0, 0.21);
   box-shadow: 3px 10px 1px -3px rgba(0, 0, 0, 0.21);
+}
+.big-shadow{
+  -webkit-box-shadow: 3px 23px 1px -3px rgba(0, 0, 0, 0.21);
+  -moz-box-shadow: 3px 23px 1px -3px rgba(0, 0, 0, 0.21);
+  box-shadow: 3px 100px 300px -3px rgba(0, 0, 0, 0.5);
 }
 .yellow {
   background-color: rgba(221, 224, 15, 0.945);
@@ -28,4 +52,5 @@
 }
 .text-violet {
   color: rgba(92, 28, 196, 0.822);
+  border-color: rgba(92, 28, 196, 0.822);
 }

@@ -73,10 +73,11 @@ export const logIn = value => async dispatch => {
 };
 // Newsletter
 export const SubmitNewsletter = value => async dispatch => {
-  dispatch({ type: "LOADING", payload: true });
+  dispatch({ type: "NEWSLETTER_LOADING", payload: true });
   const response = await axios.post("/newsletter", value);
+  console.log(response);
+  dispatch({ type: "NEWSLETTER_LOADING", payload: false });
   dispatch({ type: "SUBMIT_NEWSLETTER", payload: response.data });
-  dispatch({ type: "LOADING", payload: false });
 };
 export const getNewsletter = () => async dispatch => {
   dispatch({ type: "LOADING", payload: true });

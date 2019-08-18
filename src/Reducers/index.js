@@ -1,5 +1,4 @@
 import { combineReducers } from "redux";
-import { reducer as formReducer } from "redux-form";
 // import actions
 import podcastList from "./podcastList";
 import blogpostList from "./blogPostList";
@@ -12,6 +11,7 @@ import newsletter from "./newsletter";
 import selectedPodcast from "./selectedPodcast";
 import submitNewsletter from "./submitNewsletter";
 import loading from "./loading";
+import newsletterLoading from "./newsletterLoading";
 
 export default combineReducers({
   podcastList,
@@ -25,5 +25,5 @@ export default combineReducers({
   submitNewsletter,
   selectedPodcast,
   loading,
-  form: formReducer
+  newsletterLoading
 });

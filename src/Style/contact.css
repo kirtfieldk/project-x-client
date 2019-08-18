@@ -1,17 +1,46 @@
-.full-screen {
-    position: absolute;
-  z-index: -1;
-  width: 100vw;
-  height: 100vh;
+.growth {
+  animation: growth 0.5s ease-in forwards;
 }
-.bg-star {
-  background-image: url("../Images/rock-bg.jpg");
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
+
+@keyframes growth {
+  from {
+    /* resize: none; */
+    height: 7vh;
+    border-color: grey;
+  }
+  to {
+    height: 30vh;
+    border-color: #772014;
+    resize: none;
+  }
 }
-.bg-trans {
-  background-color: rgba(255, 255, 225, 0.2);
-  color: black;
+.round {
+  border-radius: 15px;
+}
+.contact-title {
+  font-size: 2.2rem;
   font-weight: bolder;
+  text-align: center;
+}
+
+.growing-yellow {
+  animation: growing-yellow 1s infinite;
+}
+@keyframes growing-yellow {
+  from {
+    background-color: white;
+    color: white;
+    cursor: none;
+  }
+  50% {
+    border-color: #772014;
+    cursor: none;
+    /* border-width: 12px; */
+  }
+  to {
+    border-color: rgba(221, 224, 15, 0.945);
+    background-color: rgba(221, 224, 15, 0.945);
+    color: rgba(221, 224, 15, 0.945);
+    cursor: none;
+  }
 }

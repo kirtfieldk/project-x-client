@@ -22,7 +22,7 @@ import AdminImages from "./Components/Login/AdminPages/AdminImages";
 import AdminOutsource from "./Components/Login/AdminPages/AdminOutsource";
 import AdminPodcast from "./Components/Login/AdminPages/AdminPodcast";
 import AdminBlogpost from "./Components/Login/AdminPages/AdminBlogpost";
-
+//
 const App = props => {
   useEffect(() => {
     props.fetchBlogpost();
@@ -33,6 +33,7 @@ const App = props => {
   return (
     <Router>
       <Nav />
+      <div className="spacer" />
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/post" component={Post} />
@@ -55,6 +56,7 @@ const App = props => {
         </>
         <Route path="*" component={NotFound} />
       </Switch>
+      <Footer />
     </Router>
   );
 };

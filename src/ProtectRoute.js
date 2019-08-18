@@ -6,12 +6,16 @@ const ProtectRoute = ({ component: Component, loginToken, ...rest }) => {
     <Route
       {...rest}
       render={props =>
-        loginToken !== false ? <Component {...props} /> : <Redirect to="/admin" />
+        loginToken !== false ? (
+          <Component {...props} />
+        ) : (
+          <Redirect to="/admin" />
+        )
       }
     />
   );
 };
 const mapStateToProps = ({ loginToken }) => {
-  return loginToken;
+  return { loginToken };
 };
 export default connect(mapStateToProps)(ProtectRoute);

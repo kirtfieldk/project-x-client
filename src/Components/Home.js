@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import firebase from "firebase";
+import FileUploader from "react-firebase-file-uploader";
 import HomePageHero from "./sub-comp/HomepageHero";
 import FavPodcast from "./sub-comp/FavPodcast";
 import ImgBlock from "../Components/sub-comp/img-block";
 function Home() {
   return (
     <div>
-      <div className="text-center open-title pt-5 pb-5">EARTHSIS</div>
+      <div className="text-center open-title smaller-size">EARTHSIS</div>
       <HomePageHero />
       <div className="row">
         <div className="col-sm-7 ml-5 body-box shadow text-light h-50">

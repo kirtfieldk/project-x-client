@@ -1,28 +1,9 @@
-.App {
-  text-align: center;
-}
 body {
   /* font-family: "Josefin Sans", sans-serif; */
   overflow-x: hidden;
   font-family: "Roboto Condensed", sans-serif;
   /* background-image: linear-gradient(to right, #434343 0%, black 100%); */
   /* background-image: linear-gradient(to right, #868f96 0%, #596164 100%); */
-}
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
@@ -37,7 +18,7 @@ body {
 }
 .spacer {
   width: 100%;
-  height: 20px;
+  height: 10vh;
 }
 .height-60 {
   height: 60vh;
@@ -111,4 +92,19 @@ a:hover {
 .active-link {
   border-bottom-style: solid;
   border-bottom-color: white;
+}
+
+/* MOBILE */
+
+@media only screen and (max-width: 630px) {
+  .smaller-size {
+    font-size: 2px;
+    color: green;
+  }
+  .height-40 {
+    height: 60vh;
+  }
+}
+.bg-yellow {
+  background-color: rgba(221, 224, 15, 0.945);
 }

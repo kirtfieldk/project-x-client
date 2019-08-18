@@ -24,14 +24,14 @@ const AddBlogpost = () => {
   const [touched, setTouch] = useState(false);
   // ///////////////////////////////////////////////////////////////////////////////////////////
   // CREATING QUILL THING
-  const renderQuill = () => {
-    var quill = new Quill("#editor", {
-      theme: "snow",
-      modules: {
-        toolbar: toolbarOptions
-      }
-    });
-  };
+  // const renderQuill = () => {
+  //   var quill = new Quill("#editor", {
+  //     theme: "snow",
+  //     modules: {
+  //       toolbar: toolbarOptions
+  //     }
+  //   });
+  // };
   const modules = {
     toolbar: [
       [{ header: [1, 2, false] }],

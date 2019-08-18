@@ -7,7 +7,7 @@ const AddNewsletter = () => {
   const [valid, setValid] = useState("");
   console.log(person);
   const isValid = () => {
-    if (person.email == "" || person.name == "") return false;
+    if (person.email === "" || person.name === "") return false;
     else return true;
   };
   const sendEmail = async () => {

@@ -5,8 +5,7 @@
 .hover-change {
   cursor: pointer;
 }
-h5 {
-}
+
 h2:hover {
   font-weight: bolder;
   text-decoration: underline;
