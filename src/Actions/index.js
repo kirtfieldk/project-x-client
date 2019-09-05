@@ -17,6 +17,7 @@ export const fetchBlogpost = () => async dispatch => {
 export const mainPost = value => async dispatch => {
   dispatch({ type: "LOADING", payload: true });
   const response = await axios.get(`/blogpost/${value}`);
+  console.log(response);
   dispatch({ type: "SELECTED_BLOGPOST", payload: response.data });
   dispatch({ type: "LOADING", payload: false });
 };

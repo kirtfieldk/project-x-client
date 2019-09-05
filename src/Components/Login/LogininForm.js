@@ -19,7 +19,7 @@ const LogininForm = props => {
 
   const renderForm = () => {
     return (
-      <div className="mt-5 col-5 offset-3 bg-yellow border rounded-lg shadow">
+      <div className="mt-5 col-5 offset-3 bg-secondary border rounded-lg shadow">
         <h3 className="text-center text-lg pt-3">Login</h3>
         <form
           onSubmit={e => {

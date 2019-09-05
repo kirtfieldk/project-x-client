@@ -44,13 +44,23 @@ function RenderBlogpost({ blogpostList, deleteBlogPost, fetchBlogpost }) {
         );
       } else {
         return (
-          <div className="border-bottom hover-change ml-3 mt-3" key={doc.id}>
-            <h5>
-              <Link to={`/article/${doc.id}`}>{doc.body.title}</Link>
-            </h5>
-            <p className="font-weight-lighter light mt-neg-5">
-              {doc.body.desc}
-            </p>
+          <div
+            className="border-bottom hover-change shadow-lg ml-3 mt-3"
+            key={doc.id}
+          >
+            <Link to={`/article/${doc.id}`}>
+              <img
+                src={doc.body.blogImg}
+                className="w-100 mx-auto h-75"
+                alt="Blog Img"
+              />
+              <h5 clasName="mb-2 font-weight-bolder text-center">
+                {doc.body.title}
+              </h5>
+              <p className="font-weight-lighter light mt-neg-5">
+                {doc.body.desc}
+              </p>
+            </Link>
           </div>
         );
       }

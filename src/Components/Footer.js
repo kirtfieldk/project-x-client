@@ -26,7 +26,6 @@ const Footer = ({ newsletterLoading, submitNewsletter, SubmitNewsletter }) => {
     // return err;
   };
 
-  console.log(submitNewsletter);
   const renderFooter = () => {
     return (
       <div className="pb-5">
@@ -84,7 +83,7 @@ const Footer = ({ newsletterLoading, submitNewsletter, SubmitNewsletter }) => {
     );
   };
 
-  return <div className=" footer mt-5 sticky-bottom">{renderFooter()}</div>;
+  return <div className=" footer mt-5  sticky-bottom">{renderFooter()}</div>;
 };
 
 const mapStateToProps = ({ newsletterLoading, submitNewsletter }) => {

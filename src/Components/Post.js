@@ -18,8 +18,11 @@ function Post() {
           </div>
         </div>
         {/* Linked Podcast */}
-        <div className="ml-3 col-sm-2 mt-3 ">
+        <div className="ml-3  col-sm-4 offset-2">
+          <div>
+          <h2 className="ml-3">Podcasts</h2>
           <RenderPodcast />
+          </div>
         </div>
       </div>
       {/* End Of Row */}

@@ -82,7 +82,7 @@ a:hover {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: 4;
 }
 .trans-body {
   position: relative;
@@ -107,4 +107,8 @@ a:hover {
 }
 .bg-yellow {
   background-color: rgba(221, 224, 15, 0.945);
+}
+
+.small{
+  font-size: .9rem;
 }
